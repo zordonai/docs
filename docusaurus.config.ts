@@ -101,8 +101,7 @@ const config = {
 
   presets: [
     [
-      "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      "@docusaurus/preset-classic",
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
