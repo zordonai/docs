@@ -10,14 +10,6 @@ const getDocId = (doc) => {
     .join("/");
 };
 
-const getPageRoute = (page) => {
-  return page
-    .replace(/\.mdx?$/, "")
-    .split("/")
-    .slice(2)
-    .join("/");
-};
-
 const getPath = (page) => {
   return page.replace(/\.mdx?$/, "");
 };
@@ -39,8 +31,6 @@ const formatFooterItem = (item) => {
       linkObject.to = getPath(item.to);
     } else if (item.href) {
       linkObject.href = item.href;
-    } else {
-      linkObject.to = "/blog";
     }
 
     return linkObject;
@@ -58,14 +48,6 @@ const formatNavbarItem = (item, subnav = false) => {
 
   if (item.link === "external" && item.externalLink) {
     navItem.href = item.externalLink;
-  }
-
-  if (item.link === "blog") {
-    navItem.to = "/blog";
-  }
-
-  if (item.link === "page" && item.pageLink) {
-    navItem.to = getPageRoute(item.pageLink);
   }
 
   if (item.link === "doc" && item.docLink) {
@@ -92,13 +74,6 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
-  },
 
   presets: [
     [
