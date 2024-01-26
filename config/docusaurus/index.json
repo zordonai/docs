@@ -1,42 +1,18 @@
 {
   "label": "Settings",
+  "title": "ZordonAI",
   "navbar": [
     {
-      "label": "Docs",
-      "link": "doc",
-      "docLink": "docs/intro.mdx",
-      "position": "left"
-    },
-    {
-      "label": "Blog",
-      "link": "blog",
-      "position": "left"
-    },
-    {
-      "label": "MDX Page",
-      "link": "page",
-      "docLink": "src/pages/Test-MDX-Page.mdx",
-      "pageLink": "src/pages/Test-MDX-Page.mdx",
-      "position": "left"
-    },
-    {
-      "label": "Docusaurus GitHub",
+      "label": "Sign in",
       "link": "external",
-      "externalLink": "https://github.com/facebook/docusaurus",
-      "position": "right"
-    },
-    {
-      "label": "Tina",
-      "link": "external",
-      "externalLink": "https://tina.io/",
+      "externalLink": "https://app.zordon.ai",
       "position": "right"
     }
   ],
   "logo": {
-    "alt": "Tina",
-    "src": "/img/tina-icon.svg"
+    "alt": "Zordon",
+    "src": "/img/logo.svg"
   },
-  "title": "Tinasaurus",
   "footer": {
     "style": "dark",
     "links": [
@@ -85,7 +61,7 @@
         ]
       }
     ],
-    "copyright": "My Project, Inc. Built with Docusaurus."
+    "copyright": "ZordonAI | Beowner."
   },
-  "url": "https://tinasaurus.vercel.app/"
+  "url": "https://docs.zordon.ai"
 }

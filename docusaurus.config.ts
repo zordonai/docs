@@ -1,3 +1,4 @@
+import path from "path";
 import { themes as prismThemes } from "prism-react-renderer";
 import docusaurusData from "./config/docusaurus/index.json";
 
@@ -104,23 +105,43 @@ const config = {
       "@docusaurus/preset-classic",
       {
         docs: {
+          routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: docusaurusData.url + "/admin/#/collections/doc",
         },
-        blog: {
-          showReadingTime: true,
-          editUrl: docusaurusData.url + "/admin/#/collections/post",
-        },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],
   ],
-
+  themes: [
+    path.resolve(
+      __dirname,
+      "node_modules",
+      "docusaurus-theme-github-codeblock",
+      "build",
+      "index.js"
+    ),
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      {
+        hashed: true,
+        indexDocs: true,
+        docsRouteBasePath: "/",
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     {
+      colorMode: {
+        defaultMode: "light",
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
         title: docusaurusData.title || "",
         logo: {
